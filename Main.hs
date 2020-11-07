@@ -25,7 +25,7 @@ main = do
       Just (title, description) -> do
           putStrLn (prefix <> "title: " <> Text.unpack title)
           --putStrLn (prefix <> map (const '=') (Text.unpack title))
-          putStrLn (prefix <> "desc:" <> reNewline prefix
+          putStrLn (prefix <> "desc: " <> reNewline prefix
                               (TextLazy.unpack (toLazyText (htmlEncodedText description))))
       Nothing -> do
           case lparse (onlyTitle) tokens of
